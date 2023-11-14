@@ -110,6 +110,19 @@ body {
 
 .projects-nav {
   display: inline-flex;
+  flex-flow: column;
+  width: max-content;
+  align-items: center;
+  justify-content: right;
+  text-align: right;
+
+  float: right;
+
+  background-color: #ffff0063;
+}
+
+.projects-nav h4 {
+  color: #636363;
 }
 
 .projects-nav ul {
@@ -119,11 +132,16 @@ body {
 .main-nav {
   display: inline-flex;
   justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   align-items: center;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 200;
   width: 10rem;
+  offset-anchor: 50% 50%;
+  background-color: rgba(0, 255, 55, 0.205)
 }
 
 .main-nav a {
@@ -132,20 +150,14 @@ body {
 }
 
 .main-nav li {
-  transition: all .25s ease-out;
+  transition: all .2s ease-out;
+  background-color: #0000;
 }
 
 .main-nav li:hover {
-  font-weight: 400;
-  font-size: 1.85rem;
-  background: linear-gradient(90deg, rgba(44, 44, 44, 0.00) 2.08%, #2C2C2C 50.52%, rgba(44, 44, 44, 0.00) 99.48%);
-}
-
-.main-nav a::before, .main-nav a::after {
-  content: '';
-  height: 2px;
-  width: 10rem;
-  background: linear-gradient(90deg, #ffffff00 2.08%, #ffffff 50.52%, #ffffff00 99.48%);
+  transform: scale(1.25);
+  animation: main-nav-bg-in .2s;
+  background-image: linear-gradient(90deg, rgba(44, 44, 44, 0.00) 0%, #2C2C2C 50%, rgba(44, 44, 44, 0.00) 100%);
 }
 
 .main-nav ul {
@@ -196,7 +208,22 @@ body {
   height: auto;
 }
 
+dynamic_click_icon {
+  position: relative;
+  display: inline-block;
+  background-image: url("../Icons/ClickMouse.svg");
+  height: 1em;
+  width: 1em;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 @media (orientation: portrait) {
+  dynamic_click_icon {
+    background-image: url("../Icons/ClickMobile.svg");
+  }
+
   .top-banner {
     flex-flow: column;
   }
