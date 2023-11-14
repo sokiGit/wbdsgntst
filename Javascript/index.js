@@ -18,3 +18,5 @@ function early_close() {
 
 too_early_close.bind("click", early_close);
 too_early_close.bind("touched", early_close);
+
+early_close()

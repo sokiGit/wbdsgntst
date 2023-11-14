@@ -48,10 +48,18 @@ body {
   height: 100%;
 }
 
+.contact-me {
+  background-color: #9c23ff56;
+}
+
+.about-me {
+  background-color: #239cff56;
+}
+
 .to-bottom {
-  width: 4em;
-  height: 4em;
-  border-radius: 2em;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 2rem;
   position: static;
   display: flex;
   justify-content: center;
@@ -92,6 +100,7 @@ body {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 25%);
+  background-color: #ff236556;
 }
 
 .bottom {
@@ -186,4 +195,31 @@ body {
 
 .contacts img {
   width: 2rem;
+}
+
+@media (orientation: portrait) {
+  .contact-me, .about-me {
+    width: 100%;
+    min-height: 70%;
+    height: fit-content;
+  }
+
+  .to-bottom::before {
+    width: 50vw;
+    height: 2px;
+    left: calc(-50vw - 2px);
+    top: 50%;
+  }
+  
+  .to-bottom::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    background: var(--c-cyber-line);
+    box-shadow: var(--shadow-cyber-glow);
+    width: 50vw;
+    height: 2px;
+    right: calc(-50vw - 2px);
+    top: 50%;
+  }
 }
