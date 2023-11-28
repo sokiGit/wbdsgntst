@@ -219,6 +219,11 @@ dynamic_click_icon {
   background-repeat: no-repeat;
 }
 
+.bubble {
+  background-color: rgb(95, 190, 245);
+  border-radius: 1ch;
+}
+
 @media (orientation: portrait) {
   dynamic_click_icon {
     background-image: url("../Icons/ClickMobile.svg");
