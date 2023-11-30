@@ -1,8 +1,15 @@
+
+/* Constants */
+// Header
 const header = $("header");
 const mobile_hamburger = $(".mobile-hamburger");
+
+// Early easter egg
 const too_early = $(".too-early")
 const too_early_close = $(".too-early-close");
 
+
+/* Header */
 mobile_hamburger.bind("touchend", (e) => {
     if (header.css("visibility") == "hidden")
     {
@@ -12,6 +19,7 @@ mobile_hamburger.bind("touchend", (e) => {
     }
 })
 
+/* Early easter egg */
 function early_close() {
     too_early.css("visibility", "hidden");
 }

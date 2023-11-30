@@ -223,6 +223,7 @@ dynamic_click_icon {
 .bubble {
   min-width: 3rem;
   min-height: 3rem;
+  width: fit-content;
   display: flex;
   align-items: center;
   padding: 1em;
