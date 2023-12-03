@@ -106,7 +106,10 @@ body {
 }
 
 .bottom {
-  min-height: 25vh;
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
 }
 
 .projects-nav {
@@ -116,8 +119,8 @@ body {
   align-items: center;
   justify-content: right;
   text-align: right;
-
-  float: right;
+  right: 0;
+  position: absolute;
 
   background-color: #ffff0063;
 }
@@ -171,8 +174,12 @@ body {
 }
 
 .info-mail {
+  position: absolute;
   margin: .5rem;
   text-align: center;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .info-mail a {
@@ -253,18 +260,31 @@ dynamic_click_icon {
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
   padding-right: .35rem;
+  transition: .2s background-color ease-in-out;
 }
 
 .send-msg-icon:hover {
   background-color: #fff1;
 }
 
-.send-msg-text:hover {
-  text-decoration: underline;
+.send-msg-icon img {
+  transition: .2s filter ease-in-out,
+              .2s rotate cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.send-msg-icon:hover img {
+  filter: sepia(100%) saturate(750%) brightness(70%) hue-rotate(120deg);
+  rotate: 10deg;
 }
 
 .send-msg-text {
-  border-block: 1px solid #fff;
+  /*border-block: 1px solid #fff;*/
+  background: linear-gradient(90deg, #fff0, #fff),
+              linear-gradient(90deg, #fff0, #fff),
+              linear-gradient(90deg, #fff0, #fff0);
+  background-size: 100% 1px, 100% 1px, 100%, calc(100% - 2px);
+  background-position-y: 0, 100%, 1px;
+  background-repeat: no-repeat;
   height: 3rem;
   width: calc(100% - 4rem);
   display: flex;
@@ -273,6 +293,19 @@ dynamic_click_icon {
   padding-right: 1rem;
   color: #fff;
   text-decoration: none;
+  transition: .2s color ease, 
+              .2s background-color ease;
+}
+
+.send-msg-text:hover {
+  text-decoration: underline;
+  background: linear-gradient(90deg, #fff0, #fff),
+              linear-gradient(90deg, #fff0, #fff),
+              linear-gradient(90deg, #fff0, #fff1);
+  background-size: 100% 1px, 100% 1px, 100%, calc(100% - 2px);
+  background-position-y: 0, 100%, 1px;
+  background-repeat: no-repeat;
+  color: #6abdcc;
 }
 
 .send-msg-icon img {
