@@ -27,6 +27,15 @@
     --shadow-header: 0 4px 16px 0 #00000026, 0 4px 4px 0 #00000040;
 }
 
+/* Preventing my site from breaking bruh */
+body > div:not(.too-early, :has(a)) {
+    height: 0 !important;
+}
+
+body > div:not(.too-early, :has(a)) > div {
+    height: 0 !important;
+}
+
 html, body {
     min-height: 100vh;
 }
