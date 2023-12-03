@@ -7,7 +7,7 @@
 }
 
 :root {
-    --blur-small: blur(4px);
+    --blur-mid: blur(.5em);
     --border-glass: 1px solid #ffffff21;
     --border-small-button-radius: 1em;
     --c-background-small-button: #161616;
@@ -48,7 +48,7 @@ header {
     border-bottom: var(--border-glass);
     background: color-mix(in srgb, var(--c-background-menus) 100%, transparent 45%);
     box-shadow: var(--shadow-header);
-    backdrop-filter: var(--blur-small);
+    backdrop-filter: var(--blur-mid);
     position: fixed;
     top: 0;
     z-index: 2;
@@ -152,8 +152,8 @@ header > h2 {
     visibility: hidden;
     background: var(--c-background-small-button);
     box-shadow: var(--shadow-box-small);
-    width: 3em;
-    height: 3em;
+    width: 3rem;
+    height: 3rem;
     border-radius: var(--border-small-button-radius);
     display: flex;
     justify-content: center;
@@ -162,7 +162,8 @@ header > h2 {
     margin: 1em;
     fill: var(--c-text);
     border: none;
-    bottom: 0em;
+    top: 0;
+    right: 0;
     z-index: 3;
 }
 
@@ -173,6 +174,7 @@ header > h2 {
 
 @media (orientation: portrait) {
     body {
+        padding-top: 0;
         background: linear-gradient(180deg, var(--c-background-body) 0%, var(--c-mobile-gradient-down-body) 100%);
     }
 
@@ -191,6 +193,8 @@ header > h2 {
 
     .header-buttons a {
         width: 100%;
+        height: 4rem;
+        font-size: 2rem;
     }
 
     .header-buttons a.current::after {

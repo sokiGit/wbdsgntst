@@ -16,8 +16,10 @@ mobile_hamburger.bind("touchend", (e) => {
     if (header.css("visibility") == "hidden")
     {
         header.css("visibility", "visible")
+        document.body.style.overflow = "hidden"
     } else {
         header.css("visibility", "hidden")
+        document.body.style.overflow = "scroll"
     }
 })
 
