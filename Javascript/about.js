@@ -1,0 +1,1 @@
+$(".article-section[data-width]").css("width", $(self).attr("data-width"));

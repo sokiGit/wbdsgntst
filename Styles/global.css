@@ -8,6 +8,7 @@
 
 :root {
     --blur-mid: blur(.5em);
+    --blur-article: blur(2rem);
     --border-glass: 1px solid #ffffff21;
     --border-small-button-radius: 1em;
     --c-background-small-button: #161616;
