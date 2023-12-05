@@ -29,7 +29,7 @@ article > h1 {
 }
 
 .article-section a {
-    background-color: rgb(63, 63, 148, .5);
+    background-color: rgba(63, 63, 148, .5);
     backdrop-filter: var(--blur-mid);
     box-shadow: 0 2px 4px 0 #0005;
     border-radius: .75ch;
