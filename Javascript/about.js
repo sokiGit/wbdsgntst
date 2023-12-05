@@ -1,1 +1,3 @@
-$(".article-section[data-width]").css("width", $(self).attr("data-width"));
+$(".article-section a").foreach(() => {
+    $(this).css("background-color", $(this).attr("data-link-color"))
+})
