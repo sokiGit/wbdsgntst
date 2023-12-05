@@ -1,11 +1,11 @@
 main {
-    margin-left: 10%;
+    margin-left: 15%;
     margin-top: 1rem;
-    width: 80%;
+    width: 70%;
 }
 
 article {
-    border-radius: 1em;
+    border-radius: .75em;
     border: 1px solid rgba(255, 255, 255, .15);
     background: var(--c-background-menus);
     box-shadow: 2px 6px 20px 0px rgba(0, 0, 0, .25), 0px 4px 4px 0px rgba(0, 0, 0,  .25);
@@ -36,6 +36,7 @@ article > h1 {
     color: #fff;
     padding-inline: .5ch;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .article-section a:hover {
@@ -59,4 +60,32 @@ article > h1 {
 
 .article-half > img {
     width: 100%;
+}
+
+.article-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: nowrap;
+}
+
+.article-wrapper article {
+    margin: 1rem;
+}
+
+@media (orientation: portrait) {
+    .article-half {
+        width: 100%;
+    }
+    .article-main {
+        flex-flow: column;
+    }
+    main {
+        width: 100%;
+        margin-inline: 0;
+    }
+
+    article {
+        border-radius: 0;
+        border-inline: none;
+    }
 }
