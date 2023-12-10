@@ -1,6 +1,4 @@
 :root {
-  --c-scrollbar-track: #070707;
-  --c-scrollbar-thumb: #222222;
   --c-cyber-line: #41ddff40;
   --c-background-dark-blue-gradient: linear-gradient(180deg, #4d606d80 0%, #13385480 100%);;
   --c-background-small-button: #161616;
@@ -18,31 +16,6 @@
   --proj-robotics-start: #6582EB;
   --proj-robotics-end: #9D51B8;
 }
-
-body {
-  scrollbar-width: thin;
-  scrollbar-color: #fff;
-}
-
-/* Scrollbar */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--c-scrollbar-thumb) var(--c-scrollbar-track);
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: var(--c-scrollbar-track);
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: var(--c-scrollbar-thumb);
-  }
 
 .top-banner {
   width: 100%;
@@ -74,7 +47,8 @@ body {
 }
 
 .banner-me {
-  max-width: 90vw;
+  width: 100%;
+  float: right;
 }
 
 .bubble:first-of-type {
