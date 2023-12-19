@@ -4,7 +4,7 @@ main {
     width: 70%;
 }
 
-article {
+article, .card {
     border-radius: .75em;
     border: 1px solid rgba(255, 255, 255, .15);
     background: var(--c-background-menus);
@@ -64,6 +64,10 @@ article > h1 {
     max-height: 100%;
 }
 
+article li {
+    list-style-position: inside;
+}
+
 .article-wrapper {
     display: flex;
     justify-content: space-between;
@@ -72,6 +76,41 @@ article > h1 {
 
 .article-wrapper article {
     margin: 1rem;
+}
+
+.flex-cards-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    margin: .5rem;
+}
+
+.card > a {
+    border: 1px solid #fff;
+    padding: .25rem 1rem;
+    display: inline-block;
+    margin: 1rem;
+    flex-shrink: 100%;
+    flex-grow: 0;
+    flex-basis: 100%;
+    border-radius: 2rem;
+    white-space: nowrap;
+    color: #fff;
+    text-shadow: 0 0 4px #0009;
+    text-decoration: none;
+    transition: border-color .2s ease,
+                color .2s ease;
+}
+
+.card > a:hover {
+    border-color: var(--c-blue-light);
+    color: var(--c-blue);
+    background: #0003;
+    text-decoration: underline;
+    transition: border-color .2s ease,
+                color .2s ease;
 }
 
 @media (orientation: portrait) {
@@ -89,5 +128,13 @@ article > h1 {
     article {
         border-radius: 0;
         border-inline: none;
+    }
+
+    .flex-cards-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .flex-cards-wrapper > a {
+        align-self: center;
     }
 }

@@ -6,16 +6,34 @@ $("body").append(`<button class="mobile-hamburger">
     </svg>
 </button>`)
 
+/* Header */
+
 $("header").append(`<h2>
-    <img src="${WINDOW_ORIGIN}/Icons/Favicon.png">
-    Pavel Šefl
+<a href="${WINDOW_ORIGIN}">
+<img src="${WINDOW_ORIGIN}/Icons/Favicon.png">
+Pavel Šefl
+</a>
 </h2>
 <span class="header-buttons">
-    <a id="header-btn-home" href="${WINDOW_ORIGIN}">Domů</a>
-    <a id="header-btn-projects" href="${WINDOW_ORIGIN}/projects">Projekty</a>
-    <a id="header-btn-about" href="${WINDOW_ORIGIN}/about">O mě</a>
-    <a id="header-btn-contacts" href="${WINDOW_ORIGIN}/contacts">Kontakty</a>
+<a id="header-btn-home" href="${WINDOW_ORIGIN}">Domů</a>
+<a id="header-btn-projects" href="${WINDOW_ORIGIN}/projects">Projekty</a>
+<a id="header-btn-about" href="${WINDOW_ORIGIN}/about">O mě</a>
+<a id="header-btn-contacts" href="${WINDOW_ORIGIN}/contacts">Kontakty</a>
 </span>`)
+
+const header = $("header");
+const mobile_hamburger = $(".mobile-hamburger");
+
+mobile_hamburger.bind("touchend", (e) => {
+    if (header.css("visibility") == "hidden")
+    {
+        header.css("visibility", "visible")
+        document.body.style.overflow = "hidden"
+    } else {
+        header.css("visibility", "hidden")
+        document.body.style.overflow = "scroll"
+    }
+})
 
 var current_page = window.location.pathname.match("^/[a-z]+(?=/)") 
 current_page = current_page == null ? "" : current_page.toString().substring(1);
