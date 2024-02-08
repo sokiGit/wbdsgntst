@@ -1,6 +1,6 @@
 var WINDOW_ORIGIN = window.location.origin
-if (WINDOW_ORIGIN == "https://www.github.com/") {
-    WINDOW_ORIGIN = "https://www.github.com/sokiGit/wbdsgntst/"
+if (WINDOW_ORIGIN == "https://sokigit.github.io") {
+    WINDOW_ORIGIN = "https://sokigit.github.io"
 }
 
 $("body").append(`<button class="mobile-hamburger">
