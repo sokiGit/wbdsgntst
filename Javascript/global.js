@@ -1,4 +1,7 @@
-const WINDOW_ORIGIN = window.location.origin
+var WINDOW_ORIGIN = window.location.origin
+if (WINDOW_ORIGIN == "https://www.github.com/") {
+    WINDOW_ORIGIN = "https://www.github.com/sokiGit/wbdsgntst/"
+}
 
 $("body").append(`<button class="mobile-hamburger">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
