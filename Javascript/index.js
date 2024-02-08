@@ -23,5 +23,4 @@ early_close()
 to_bottom.click((e) => { 
     e.preventDefault();
     window.scrollTo({left: 0, top: document.body.scrollHeight, behavior: "smooth"});
-    
 });
