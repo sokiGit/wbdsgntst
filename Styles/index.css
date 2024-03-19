@@ -170,6 +170,10 @@
 }
 
 /* Projects naviagtion colors */
+li[class^="proj-"] {
+  cursor: pointer;
+}
+
 .proj-ui-design {
   background: linear-gradient(#fff0, #fff0),
   linear-gradient(var(--proj-ui-design-start), var(--proj-ui-design-start)),
