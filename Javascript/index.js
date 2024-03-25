@@ -24,3 +24,31 @@ to_bottom.click((e) => {
     e.preventDefault();
     window.scrollTo({left: 0, top: document.body.scrollHeight, behavior: "smooth"});
 });
+
+/* Cursor effect */
+const mouse_fx = $("<div>", {"class": "mouse-fx"}).appendTo($("body"));
+$(document).on("mousemove", (p) => {
+    mouse_fx.css({
+        left: p.pageX,
+        top: p.pageY
+    });
+});
+
+/* Chat transition */
+$(".bubble").css(
+    {
+        scale: 0,
+    }
+)
+$(".bubble:first-child").delay(75).animate(
+    {
+        scale: "100%"
+    },
+    500,
+)
+$(".bubble:nth-child(2)").animate(
+    {
+        scale: "100%"
+    },
+    500
+)

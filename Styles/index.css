@@ -9,10 +9,10 @@
   --proj-ui-design-end: #FF6A3C;
   --proj-web-design-start: #FF6E4E;
   --proj-web-design-end: #FFB039;
-  --proj-game-dev-start:#E0EB65;
-  --proj-game-dev-end: #51B855;
-  --proj-cybersec-start: #65EBD3;
-  --proj-cybersec-end: #3D86DC;
+  --proj-game-dev-start:#cfc750;
+  --proj-game-dev-end: #3ead50;
+  --proj-cybersec-start: #3bc09f;
+  --proj-cybersec-end: #3b7bc4;
   --proj-robotics-start: #6582EB;
   --proj-robotics-end: #9D51B8;
 }
@@ -38,6 +38,7 @@
 .contact-me, .about-me {
   width: calc(50% - 2em);
   min-height: 80vh;
+  position: relative;
   height: 100%;
 }
 
@@ -47,8 +48,24 @@
 }
 
 .banner-me {
-  width: 100%;
-  float: right;
+  width: auto;
+  height: 100%;
+  bottom: -12.5%;
+  opacity: 0;
+  position: absolute;
+  animation: banner-me-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) .25s normal forwards;
+  filter: drop-shadow(0 0 .5rem #0004)
+}
+
+@keyframes banner-me-in {
+  from {
+    bottom: -12.5%;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
 .bubble:first-of-type {
@@ -59,9 +76,9 @@
   border-bottom-left-radius: 1.5rem;
 }
 
-/*.about-me {
-  background-color: #239cff56;
-}*/
+.about-me {
+  /*background-color: #239cff56;*/
+}
 
 .to-bottom {
   width: 4rem;
@@ -80,6 +97,23 @@
   border: 2px solid var(--c-cyber-line);
   cursor: pointer;
   backdrop-filter: var(--blur-small);
+  transition: background .3s ease;
+  animation: to-bottom-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &:hover {
+    background-color: var(--c-cyber-line);
+    & img {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@keyframes to-bottom-in {
+  from {
+    top: 0;
+  }
+  to {
+    top: 50%;
+  }
 }
 
 .to-bottom img {
@@ -87,6 +121,7 @@
   width: 55%;
   height: auto;
   filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.35));
+  transition: transform .3s ease-out;
 }
 
 .to-bottom::before {
@@ -104,10 +139,23 @@
   font-size: 7.5em;
   font-weight: 100;
   position: absolute;
-  bottom: 0;
+  bottom: -12.5%;
+  opacity: 0;
   left: 50%;
   transform: translate(-50%, 25%);
+  animation: big-title-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) .5s normal forwards;
   /*background-color: #ff236556;*/
+}
+
+@keyframes big-title-in {
+  from {
+    bottom: -12.5%;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
 .bottom {
@@ -133,6 +181,7 @@
   list-style-position: inside;
   display: flex;
   justify-content: center;
+  gap: .5rem;
   flex-flow: column;
 }
 
@@ -146,14 +195,14 @@
 
 .projects-nav li {
   position: relative;
-  margin-block: .25rem;
   width: fit-content;
   padding: 1rem;
   height: 3rem;
   border-radius: .75rem;
   display: flex;
   align-items: center;
-  background-size: 100% 100%, 100% .4em, .4em 100%, .4em 100%, 100% .4em;
+  --w: .35em;
+  background-size: 100% 100%, 100% var(--w), var(--w) 100%, var(--w) 100%, 100% var(--w);
   background-repeat: no-repeat;
   background-position: 0 0, 0 0, 0 0, 100% 0, 0 100%;
 }
@@ -170,61 +219,51 @@
 }
 
 /* Projects naviagtion colors */
-li[class^="proj-"] {
+[class^="proj-"] {
   cursor: pointer;
-}
-
-.proj-ui-design {
   background: linear-gradient(#fff0, #fff0),
-  linear-gradient(var(--proj-ui-design-start), var(--proj-ui-design-start)),
-  linear-gradient(var(--proj-ui-design-start), var(--proj-ui-design-end)),
-  linear-gradient(var(--proj-ui-design-start), var(--proj-ui-design-end)),
-  linear-gradient(var(--proj-ui-design-end), var(--proj-ui-design-end));
-}
-
-.proj-web-design {
-  background: linear-gradient(#fff0, #fff0),
-  linear-gradient(var(--proj-web-design-start), var(--proj-web-design-start)),
-  linear-gradient(var(--proj-web-design-start), var(--proj-web-design-end)),
-  linear-gradient(var(--proj-web-design-start), var(--proj-web-design-end)),
-  linear-gradient(var(--proj-web-design-end), var(--proj-web-design-end));
-}
-
-.proj-game-dev {
-  background: linear-gradient(#fff0, #fff0),
-  linear-gradient(var(--proj-game-dev-start), var(--proj-game-dev-start)),
-  linear-gradient(var(--proj-game-dev-start), var(--proj-game-dev-end)),
-  linear-gradient(var(--proj-game-dev-start), var(--proj-game-dev-end)),
-  linear-gradient(var(--proj-game-dev-end), var(--proj-game-dev-end));
-}
-
-.proj-cybersec {
-  background: linear-gradient(#fff0, #fff0),
-  linear-gradient(var(--proj-cybersec-start), var(--proj-cybersec-start)),
-  linear-gradient(var(--proj-cybersec-start), var(--proj-cybersec-end)),
-  linear-gradient(var(--proj-cybersec-start), var(--proj-cybersec-end)),
-  linear-gradient(var(--proj-cybersec-end), var(--proj-cybersec-end));
-}
-
-.proj-robotics {
-  background: linear-gradient(#fff0, #fff0),
-  linear-gradient(var(--proj-robotics-start), var(--proj-robotics-start)),
-  linear-gradient(var(--proj-robotics-start), var(--proj-robotics-end)),
-  linear-gradient(var(--proj-robotics-start), var(--proj-robotics-end)),
-  linear-gradient(var(--proj-robotics-end), var(--proj-robotics-end));
-}
-
-.proj-ui-design::before, .proj-web-design::before, .proj-game-dev::before, .proj-cybersec::before, .proj-robotics::before {
-  content: '';
-  width: calc(100% - .4em);
-  height: calc(100% - .4em);
-  box-shadow: inset 0 0 .1em .35em var(--c-background-body);
-  position: absolute;
-  border-radius: .5em;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  linear-gradient(var(--local-c-start), var(--local-c-start)),
+  linear-gradient(var(--local-c-start), var(--local-c-end)),
+  linear-gradient(var(--local-c-start), var(--local-c-end)),
+  linear-gradient(var(--local-c-end), var(--local-c-end));
+  &[class$="ui-design"] {
+    --local-c-start: var(--proj-ui-design-start) !important;
+    --local-c-end: var(--proj-ui-design-end) !important;
+  }
+  &[class$="web-design"] {
+    --local-c-start: var(--proj-web-design-start) !important;
+    --local-c-end: var(--proj-web-design-end) !important;
+  }
+  &[class$="game-dev"] {
+    --local-c-start: var(--proj-game-dev-start) !important;
+    --local-c-end: var(--proj-game-dev-end) !important;
+  }
+  &[class$="cybersec"] {
+    --local-c-start: var(--proj-cybersec-start) !important;
+    --local-c-end: var(--proj-cybersec-end) !important;
+  }
+  &[class$="robotics"] {
+    --local-c-start: var(--proj-robotics-start) !important;
+    --local-c-end: var(--proj-robotics-end) !important;
+  }
+  &:hover {
+    background: linear-gradient(var(--local-c-start), var(--local-c-end));
+    &::before {
+      box-shadow: none;
+    }
+  }
+  &::before {
+    content: '';
+    width: calc(100% - .4em);
+    height: calc(100% - .4em);
+    box-shadow: inset 0 0 .1em .35em var(--c-background-body);
+    position: absolute;
+    border-radius: .5em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
 }
 
 .main-nav {
@@ -254,7 +293,7 @@ li[class^="proj-"] {
 
 .main-nav li:hover {
   transform: scale(1.25);
-  background-image: linear-gradient(90deg, rgba(44, 44, 44, 0.00) 0%, #2C2C2C 50%, rgba(44, 44, 44, 0.00) 100%);
+  background-image: linear-gradient(90deg, rgba(44, 44, 44, 0.00) 0%, #fff1 50%, rgba(44, 44, 44, 0.00) 100%);
 }
 
 .main-nav ul {
@@ -297,7 +336,8 @@ li[class^="proj-"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--c-background-small-button);
+  background: color-mix(in srgb, var(--c-background-small-button) 75%, transparent 25%);
+  backdrop-filter: blur(1.5rem) saturate(250%);
   border-radius: 1rem;
   box-shadow: var(--shadow-button-small);
 }
@@ -337,12 +377,25 @@ dynamic_click_icon {
 }
 
 .send-message {
-  width: 100%;
+  width: calc(100% - 10rem);
   height: 3rem;
   display: flex;
   flex-flow: row;
   justify-content: right;
   align-items: center;
+  position: absolute;
+  animation: send-message-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) normal forwards;
+}
+
+@keyframes send-message-in {
+  from {
+    left: -20%;
+    filter: opacity(0);
+  }
+  to {
+    left: 5rem;
+    filter: opacity(1);
+  }
 }
 
 .send-msg-icon {
@@ -408,6 +461,21 @@ dynamic_click_icon {
   width: auto;
 }
 
+.mouse-fx {
+  min-width: 20vmin;
+  min-height: 20vmin;
+  border-radius: 10vmin;
+  filter: blur(15vmin);
+  z-index: -1;
+  background: linear-gradient(var(--c-blue), var(--c-purple));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  --ease: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: top .25s var(--ease), left .25s var(--ease);
+  transform: translate(-50%, -50%);
+}
+
 @media (orientation: portrait) {
   dynamic_click_icon {
     background-image: url("../Icons/ClickMobile.svg");
@@ -439,6 +507,7 @@ dynamic_click_icon {
     width: 100vw;
     min-height: 20vh;
     height: fit-content;
+    position: relative;
   }
 
   .contact-me {
@@ -448,6 +517,8 @@ dynamic_click_icon {
 
   .about-me {
     margin-top: -2rem;
+    left: 50%;
+    transform: translateX(25%);
   }
 
   .to-bottom::before {
@@ -484,5 +555,9 @@ dynamic_click_icon {
     text-align: center;
     height: auto;
     font-size: 3rem;
+  }
+  
+  .projects-nav li {
+    margin-inline: auto;
   }
 }

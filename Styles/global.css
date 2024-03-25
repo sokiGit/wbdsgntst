@@ -9,6 +9,8 @@
 :root {
     --blur-mid: blur(.5em);
     --blur-article: blur(2rem);
+    --blur-high: blur(2.5em);
+    --saturate-mid: saturate(250%);
     --border-glass: 1px solid #ffffff21;
     --border-small-button-radius: 1em;
     --c-background-small-button: #161616;
@@ -82,7 +84,7 @@ header {
     border-bottom: var(--border-glass);
     background: color-mix(in srgb, var(--c-background-menus) 100%, transparent 45%);
     box-shadow: var(--shadow-header);
-    backdrop-filter: var(--blur-mid);
+    backdrop-filter: var(--blur-high) var(--saturate-mid);
     position: fixed;
     top: 0;
     z-index: 2;
