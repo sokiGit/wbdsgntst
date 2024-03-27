@@ -501,6 +501,7 @@ dynamic_click_icon {
 
   .top-banner {
     flex-flow: column;
+    height: fit-content;
   }
 
   .contact-me, .about-me {
@@ -517,8 +518,16 @@ dynamic_click_icon {
 
   .about-me {
     margin-top: -2rem;
+    min-width: 90vw;
+    height: fit-content;
+  }
+
+  .banner-me {
     left: 50%;
-    transform: translateX(25%);
+    height: auto;
+    min-width: 80vw;
+    max-width: 100vw;
+    transform: translateX(-50%);
   }
 
   .to-bottom::before {
