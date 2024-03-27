@@ -136,9 +136,9 @@
 }
 
 .big-title {
-  font-size: 7.5em;
-  font-weight: 100;
   position: absolute;
+  max-width: 90%;
+  min-height: 7.5rem;
   bottom: -12.5%;
   opacity: 0;
   left: 50%;
@@ -340,6 +340,10 @@
   backdrop-filter: blur(1.5rem) saturate(250%);
   border-radius: 1rem;
   box-shadow: var(--shadow-button-small);
+  transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 .contacts img {
@@ -494,7 +498,7 @@ dynamic_click_icon {
 
   .bottom {
     padding-bottom: 3rem;
-    flex-flow: column;
+    flex-flow: column-reverse;
     align-items: center;
     justify-content: center;
   }
@@ -573,11 +577,17 @@ dynamic_click_icon {
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
+    & a {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1.25rem;
+      & img {
+        width: 2.75rem;
+      }
+    }
   }
 
   .big-title {
-    width: 85%;
-    text-align: center;
     height: auto;
     font-size: 3rem;
   }
