@@ -21,7 +21,7 @@ Pavel Šefl
 <span class="header-buttons">
 <a id="header-btn-home" href="${WINDOW_ORIGIN}">Domů</a>
 <a id="header-btn-projects" href="${WINDOW_ORIGIN}/projects">Projekty</a>
-<a id="header-btn-about" href="${WINDOW_ORIGIN}/about">O mě</a>
+<a id="header-btn-about" href="${WINDOW_ORIGIN}/about">O mně</a>
 <a id="header-btn-contacts" href="${WINDOW_ORIGIN}/contacts">Kontakty</a>
 </span>`)
 
