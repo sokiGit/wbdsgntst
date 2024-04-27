@@ -186,7 +186,7 @@
 }
 
 .projects-nav h4 {
-  color: #636363;
+  color: #fff6;
 }
 
 .projects-nav p {
@@ -340,10 +340,25 @@
   backdrop-filter: blur(1.5rem) saturate(250%);
   border-radius: 1rem;
   box-shadow: var(--shadow-button-small);
-  transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform .3s cubic-bezier(0.075, 0.82, 0.165, 1), background .15s linear;
   &:hover {
     transform: scale(1.2);
+    z-index: 2;
+    background: color-mix(in srgb, var(--c-custom-local) 50%, transparent 50%);
   }
+}
+
+[data-contact-type="ig"] {
+  --c-custom-local: #fff48e;
+}
+[data-contact-type="tw"] {
+  --c-custom-local: #ff7088;
+}
+[data-contact-type="dc"] {
+  --c-custom-local: #8d5cff;
+}
+[data-contact-type="gh"] {
+  --c-custom-local: #5cff77;
 }
 
 .contacts img {
@@ -497,7 +512,7 @@ dynamic_click_icon {
   }
 
   .bottom {
-    padding-bottom: 3rem;
+    padding-bottom: 12rem;
     flex-flow: column-reverse;
     align-items: center;
     justify-content: center;
@@ -570,7 +585,7 @@ dynamic_click_icon {
   }
 
   .contacts {
-    flex-flow: row;
+    flex-flow: row wrap;
     width: calc(100% - 1rem);
     justify-content: space-evenly;
     position: absolute;
