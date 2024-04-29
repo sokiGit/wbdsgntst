@@ -15,6 +15,9 @@
   --proj-cybersec-end: #3b7bc4;
   --proj-robotics-start: #6582EB;
   --proj-robotics-end: #9D51B8;
+  --m-fx-start: var(--c-blue);
+  --m-fx-end: var(--c-purple);
+  transform: --m-fx-start 2.2s ease, --m-fx-end 2.2s ease;
 }
 
 .top-banner {
@@ -43,18 +46,24 @@
 }
 
 .contact-me {
-  padding: 5rem;
+  padding: 2rem 5rem;
   /*background-color: #9c23ff56;*/
 }
 
 .banner-me {
-  width: auto;
-  height: 100%;
-  bottom: -12.5%;
+  max-width: 100%;
+  max-height: 100%;
   opacity: 0;
-  position: absolute;
   animation: banner-me-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) .25s normal forwards;
   filter: drop-shadow(0 0 .5rem #0004)
+}
+
+.about-me {
+  /*background-color: #239cff56;*/
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes banner-me-in {
@@ -74,10 +83,6 @@
 
 .bubble:nth-last-of-type(2) {
   border-bottom-left-radius: 1.5rem;
-}
-
-.about-me {
-  /*background-color: #239cff56;*/
 }
 
 .to-bottom {
@@ -486,15 +491,88 @@ dynamic_click_icon {
   border-radius: 10vmin;
   filter: blur(15vmin);
   z-index: -1;
-  background: linear-gradient(var(--c-blue), var(--c-purple));
-  position: absolute;
+  background: linear-gradient(45deg, var(--m-fx-start), var(--m-fx-end));
+  position: fixed;
   top: 50%;
   left: 50%;
-  --ease: cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: top .25s var(--ease), left .25s var(--ease);
+  --ease: cubic-bezier(.02,.38,.2,1.26);
+  transition: top .25s var(--ease), left .25s var(--ease), filter .25s var(--ease), --m-fx-start 2.2s ease, --m-fx-end 2.2s ease;
   transform: translate(-50%, -50%);
 }
 
+/* FX Color/Filter change */
+/* Contacts links */
+body:has([data-contact-type="ig"]:hover) .mouse-fx {
+  --m-fx-start: #fff;
+  --m-fx-end: #ffa;
+}
+body:has([data-contact-type="tw"]:hover) .mouse-fx {
+  --m-fx-start: #fff;
+  --m-fx-end: #f8a;
+}
+body:has([data-contact-type="dc"]:hover) .mouse-fx {
+  --m-fx-start: #fff;
+  --m-fx-end: #a8f;
+}
+body:has([data-contact-type="gh"]:hover) .mouse-fx {
+  --m-fx-start: #fff;
+  --m-fx-end: #af8;
+}
+/* Project buttons */
+body:has(.proj-ui-design:hover) .mouse-fx {
+  --m-fx-start: var(--proj-ui-design-start);
+  --m-fx-end: var(--proj-ui-design-end);
+}
+body:has(.proj-web-design:hover) .mouse-fx {
+  --m-fx-start: var(--proj-web-design-start);
+  --m-fx-end: var(--proj-web-design-end);
+}
+body:has(.proj-game-dev:hover) .mouse-fx {
+  --m-fx-start: var(--proj-game-dev-start);
+  --m-fx-end: var(--proj-game-dev-end);
+}
+body:has(.proj-cybersec:hover) .mouse-fx {
+  --m-fx-start: var(--proj-cybersec-start);
+  --m-fx-end: var(--proj-cybersec-end);
+}
+body:has(.proj-robotics:hover) .mouse-fx {
+  --m-fx-start: var(--proj-robotics-start);
+  --m-fx-end: var(--proj-robotics-end);
+}
+/* Footer mail */
+body:has(.info-mail:hover) .mouse-fx {
+  --m-fx-start: #fff;
+  --m-fx-end: #aaf;
+  filter: blur(50vmin);
+}
+/* Nav buttons */
+body:has(nav a:hover) .mouse-fx {
+  filter: blur(7.5vmin);
+}
+
+body:has(
+  /* To botttom */
+  .to-bottom:hover,
+  /* Contact banner */
+  .send-message>a:hover,
+  /* Header */
+  .header-buttons>a:not(.current):hover
+) .mouse-fx {
+  filter: blur(10vmin);
+}
+
+/* Smaller aspect ratios */
+@media (aspect-ratio < 3 / 2) {
+  .contact-me {
+    padding-inline: 2rem;
+  }
+  .send-message {
+    width: calc(100% - 4rem);
+    transform: translateX(-3rem);
+  }
+}
+
+/* Portrait screen orientation */
 @media (orientation: portrait) {
   dynamic_click_icon {
     background-image: url("../Icons/ClickMobile.svg");
@@ -537,6 +615,7 @@ dynamic_click_icon {
   
   .send-message {
     width: calc(100% - 2rem);
+    transform: translateX(0);
     animation: send-message-in 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
@@ -557,13 +636,7 @@ dynamic_click_icon {
     aspect-ratio: 1;
   }
 
-  .banner-me {
-    left: 50%;
-    height: auto;
-    min-width: 80vw;
-    max-width: 100vw;
-    transform: translateX(-50%);
-  }
+  
 
   .to-bottom::before {
     width: 50vw;

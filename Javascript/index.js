@@ -1,7 +1,4 @@
-
 /* Constants */
-
-
 // Early easter egg
 const too_early = $(".too-early");
 const too_early_close = $(".too-early-close");
@@ -27,10 +24,11 @@ to_bottom.click((e) => {
 
 /* Cursor effect */
 const mouse_fx = $("<div>", {"class": "mouse-fx"}).appendTo($("body"));
-$(document).on("mousemove", (p) => {
+$(document).mousemove(function (e) { 
+    // values: e.clientX, e.clientY, e.pageX, e.pageY
     mouse_fx.css({
-        left: p.pageX,
-        top: p.pageY
+    left: e.clientX,
+    top: e.clientY
     });
 });
 
