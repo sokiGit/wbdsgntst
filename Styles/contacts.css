@@ -1,0 +1,101 @@
+main {
+    margin-inline: auto;
+    width: 70%; 
+    min-width: max(120px, min(20ch, 100%));
+}
+
+li {
+    list-style: none;
+}
+
+section {
+    position: relative;
+    margin-block: 1rem;
+    padding: 1ch;
+    & > h1 {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: '';
+            width: 5px;
+            aspect-ratio: 1;
+            background-color: #fff;
+            border-radius: 50%;
+            left: calc(-1ch - 6px);
+            top: 50%;
+            transform: translate(50%, -50%);
+            box-shadow: 0 0 5px 0 #fff;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            width: .5ch;
+            height: 5px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            top: 50%;
+            left: calc(-1ch);
+            transform: translateY(-50%);
+            background: linear-gradient(90deg, #fff3, #fff0);
+        }
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 1px;
+        left: -12px;
+        background: linear-gradient(#fff, #fff0);
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        background: #fff;
+        border-radius: 50%;
+        width: 9px;
+        top: 0;
+        aspect-ratio: 1;
+        left: -12px;
+        transform: translate(-50%, 50%);
+    }
+
+    &.fast-resp {
+        background: #0003;
+        border-radius: 1em;
+        border: 1px #aaa1 solid;
+    }
+}
+
+.discord-fast {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    &>.fast-flex {
+        flex-grow: 1;
+        flex-shrink: 1;
+        &:first-child {
+            flex-grow: 5;
+        }
+    }
+}
+
+@media (aspect-ratio < 3 / 2) {
+    main {
+        width: min(90%, calc(100% - 2ch));
+    }
+}
+
+@media (orientation: portrait) {
+    main {
+        width: 100%;
+    }
+    section.fast-resp {
+        margin: .5ch;
+    }
+    h1 {
+        &::before, &::after {
+            display: none;
+        }
+    }
+}
