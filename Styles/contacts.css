@@ -14,6 +14,7 @@ section {
     padding: 1ch;
     & > h1 {
         position: relative;
+        line-height: 1.5;
         &::before {
             display: none; /*fix position not working on different screen sizes*/
             position: absolute;
@@ -78,6 +79,44 @@ section {
         &:first-child {
             width: calc(70% - 2ch);
         }
+    }
+}
+
+.contacts-grid {
+    display: flex;
+    gap: 2em;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.contact {
+    width: 15ch;
+    height: 22.5ch;
+    background: #fff3;
+    border: 1px #fff2 solid;
+    backdrop-filter: blur(2em);
+    border-radius: 1em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1ch;
+    padding: 1.5ch;
+    transition: transform .3s cubic-bezier(0.215, 0.610, 0.355, 1), box-shadow .3s ease;
+    box-shadow: 0 0 2ch 0 #0004;
+    &>img {
+        margin-bottom: 1.5ch;
+        width: 60%;
+    }
+    &>a {
+        color: #fff;
+        word-break: break-all;
+    }
+    &:hover {
+        transition: transform .3s cubic-bezier(0.215, 0.610, 0.355, 1), box-shadow .3s ease;
+        z-index: 2;
+        transform: scale(1.15);
+        box-shadow: 0 0 4ch 0 #0002;
     }
 }
 
