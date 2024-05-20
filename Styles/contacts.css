@@ -71,13 +71,29 @@ section {
 
 .discord-fast {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     justify-content: space-evenly;
     align-items: center;
     &>.fast-flex {
         width: 30%;
         &:first-child {
             width: calc(70% - 2ch);
+        }
+    }
+}
+
+.servers {
+    & li {
+        background: #8885;
+        border-radius: 1em;
+        padding: .5em .75em;
+        display: flex;
+        flex-direction: column;
+        &>.button {
+            background: #4343be96;
+            width: fit-content;
+            padding: .2ch 1.5ch;
+            border-radius: .5em;
         }
     }
 }
