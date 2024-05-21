@@ -1,0 +1,18 @@
+main {
+    width: 80%;
+    margin-inline: auto;
+}
+
+@media (aspect-ratio < 1.5) {
+    main {
+        width: calc(100% - 5ch);
+    }
+}
+
+@media (orientation: portrait) {
+    main {
+        margin-top: 2rem;
+        padding: .75ch;
+        width: 100%;
+    }
+}

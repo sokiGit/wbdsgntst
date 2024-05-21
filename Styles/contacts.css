@@ -71,7 +71,7 @@ section {
 
 .discord-fast {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
     &>.fast-flex {
@@ -82,7 +82,24 @@ section {
     }
 }
 
+.ff-dc {
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    gap: 1ch;
+    &>img {
+        height: 7ch;
+    }
+    &>a {
+        width: min-content;
+        margin-inline: auto;
+    }
+}
+
 .servers {
+    min-width: max-content;
     & li {
         transition: background-color .2s;
         background: #8885;
@@ -155,7 +172,8 @@ section {
         left: 50%;
         transform: translate(-50%, 50%);
         background-color: transparent;
-        filter: blur(5em);
+        filter: blur(10em);
+        transition: background-color .2s;
     }
     &>img {
         margin-bottom: 1.5ch;
@@ -172,6 +190,7 @@ section {
         transform: scale(1.15);
         box-shadow: 0 0 4ch 0 #0002;
         &::before {
+            transition: background-color .2s;
             background-color: var(--hover-color);            
         }
     }
