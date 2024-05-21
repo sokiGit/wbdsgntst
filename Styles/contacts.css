@@ -84,11 +84,16 @@ section {
 
 .servers {
     & li {
+        transition: background-color .2s;
         background: #8885;
         border-radius: 1em;
         padding: .5em .75em;
         display: flex;
         flex-direction: column;
+        &>a {
+            color: #aaa;
+            font-style: italic;
+        }
         &>.button {
             transition: background-color .1s, transform .2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow .2s ease;
             box-shadow: 0 0 .2ch 0 #0002;
@@ -97,14 +102,19 @@ section {
             width: fit-content;
             padding: .2ch 1.5ch;
             border-radius: .5em;
-            color: #fff;
             text-decoration: none;
+            color: #fff;
+            font-style: normal;
             &:hover {
                 transition: background-color .1s, transform .2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow .2s ease;
                 box-shadow: 0 0 2ch 0 #0005;
                 transform: scale(1.05);
                 background-color: #4343be;
             }
+        }
+        &:hover {
+            background: #8886;
+            transition: background-color .2s;
         }
     }
 }
