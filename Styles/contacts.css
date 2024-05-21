@@ -143,6 +143,20 @@ section {
     transition: transform .3s cubic-bezier(0.215, 0.610, 0.355, 1), box-shadow .3s ease;
     box-shadow: 0 0 2ch 0 #0004;
     cursor: pointer;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 200%;
+        aspect-ratio: 2;
+        z-index: -1;
+        border-radius: 50%;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        background-color: transparent;
+        filter: blur(5em);
+    }
     &>img {
         margin-bottom: 1.5ch;
         width: 60%;
@@ -152,11 +166,14 @@ section {
         word-break: break-all;
     }
     &:hover {
-        background: var(--hover-color);
+        /*background: var(--hover-color);*/
         transition: transform .3s cubic-bezier(0.215, 0.610, 0.355, 1), box-shadow .3s ease;
         z-index: 2;
         transform: scale(1.15);
         box-shadow: 0 0 4ch 0 #0002;
+        &::before {
+            background-color: var(--hover-color);            
+        }
     }
 }
 
