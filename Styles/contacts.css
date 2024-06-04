@@ -11,7 +11,7 @@ li {
 section {
     position: relative;
     margin-block: 1rem;
-    padding: 1ch;
+    padding: 1ch 1ch 1ch 1.45ch;
     & > h1 {
         position: relative;
         line-height: 1.5;
