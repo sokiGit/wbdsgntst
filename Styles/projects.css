@@ -3,6 +3,11 @@ main {
     margin-inline: auto;
 }
 
+h1 {
+    line-height: 1.5;
+    margin-block: 1.2ch .25ch;
+}
+
 @media (aspect-ratio < 1.5) {
     main {
         width: calc(100% - 5ch);
@@ -14,5 +19,9 @@ main {
         margin-top: 2rem;
         padding: .75ch;
         width: 100%;
+    }
+    main > p,
+    article > p {
+        text-align: justify;
     }
 }
