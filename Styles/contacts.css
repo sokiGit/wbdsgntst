@@ -139,6 +139,7 @@ section {
 
 .contacts-grid {
     display: flex;
+    margin-block: 2rem;
     gap: 2em;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -190,6 +191,9 @@ section {
         z-index: 2;
         transform: scale(1.15);
         box-shadow: 0 0 4ch 0 #0002;
+        &>a {
+            text-decoration: underline;
+        }
         &::before {
             transition: background-color .2s;
             background-color: var(--hover-color);            
